@@ -1,0 +1,50 @@
+body
+{
+    background-color: #e2e2e2;
+}
+
+.feeds
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.feed
+{
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 120%;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.avatar
+{
+    max-width: 48px;
+    max-height: 48px;
+}
+
+
+.article-title
+{
+    font-size: 16px;
+    line-height: 130%;
+    word-break: break-word;
+}
+
+
+.article-author
+{
+    font-size: 12px;
+    color: #778087;
+}
+
+
+.article-create_data
+{
+    font-size: 12px;
+    color: #bbbec0;
+}
+
