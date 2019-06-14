@@ -48,3 +48,7 @@ body
     color: #bbbec0;
 }
 
+a:link, a:visited, a:hover
+{
+    color: black;
+}

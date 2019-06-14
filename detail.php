@@ -9,17 +9,22 @@ session_start();
 // 导入数据库配置
 include("connect.php");
 
+// 获取文章id
+$id = $_GET['id'];
+
+
 try {
   // 连接数据库
   $con = new PDO("mysql:host=$db_host;dbname=$db_name;charset=$db_charset", $db_username, $db_password);
   $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  // 获取文章列表
-  $sql = "SELECT comment.id, comment.title, comment.content, comment.create_data, user.username FROM comment INNER JOIN user ON user.id = comment.uid";
+  // 获取文章明细
+  $sql = "SELECT comment.id, comment.title, comment.content, comment.create_data, user.username FROM comment INNER JOIN user ON user.id = comment.uid AND comment.id = $id ";
+  //   $sth->bindParam(':id', $id);
   $sth = $con->prepare($sql);
   $sth->execute();
   $sth->setFetchMode(PDO::FETCH_ASSOC); 
-  $article = $sth->fetchAll();
+  $article = $sth->fetch();
 
 } catch (PDOException $e) {
   die ("连接数据库失败:" . $e->getMessage(). "</br>");
@@ -56,21 +61,23 @@ try {
         <!-- 左边内容区域 -->
         <div class="col-8">
           <div class="left bg-white">
-            <ul class="feeds">
-              <?php foreach($article as $item): ?>
-              <li class="feed"> 
-                <div class="media">
-                  <img src="img/avatar.png" alt="头像" class="align-self-start mr-3 avatar">
-                  <div class="media-body">
-                    <p class="mt-0 article-title"><a href="detail.php?id=<?=$item['id'];?>"><?=$item['title']; ?></a></p>
-                    <p class="mb-0">
-                      <span class="article-author"><strong><?=$item['username'] ?></strong></span>&nbsp&nbsp&nbsp<span class="article-create_data"><strong><?=$item['create_data']; ?></strong></span>
-                    </p>      
-                  </div>
-                </div>
-              </li>
-              <?php endforeach; ?>
-            </ul>
+            <!-- 间隔 -->
+            <div class="w-100" style="height:10px"></div>
+            <!-- 标题 -->
+            <div class="row">
+              <div class="col">
+                <span class="ml-3"><strong><?=$article['title']?></strong></span>
+                &nbsp&nbsp&nbsp
+                <span class="article-author">作者：<?=$article['username']?></span>
+              </div>
+            </div>
+            <!-- 间隔 -->
+            <div class="w-100" style="height:20px"></div>
+            <div class="row">
+              <div class="col offset-1"><p><?=$article['content']?></p></div>
+            </div>
+            <!-- 间隔 -->
+            <div class="w-100" style="height:20px"></div>
           </div>
         </div>
         <!-- 右边内容区域 -->
