@@ -12,6 +12,12 @@ include("connect.php");
 // 获取文章id
 $id = $_GET['id'];
 
+if (!isset($id)) {
+  
+  die ;
+} 
+
+
 
 try {
   // 连接数据库
@@ -25,6 +31,14 @@ try {
   $sth->execute();
   $sth->setFetchMode(PDO::FETCH_ASSOC); 
   $article = $sth->fetch();
+
+
+  if ($article) {
+    
+  } else {
+    die ("文章不存在");
+  }
+  
 
 } catch (PDOException $e) {
   die ("连接数据库失败:" . $e->getMessage(). "</br>");
@@ -62,13 +76,21 @@ try {
         <div class="col-8">
           <div class="left bg-white">
             <!-- 间隔 -->
-            <div class="w-100" style="height:10px"></div>
+            <div class="w-100" style="height:20px"></div>
             <!-- 标题 -->
             <div class="row">
               <div class="col">
-                <span class="ml-3"><strong><?=$article['title']?></strong></span>
+                <span class="offset-5"><strong><?=$article['title']?></strong></span>
+              </div>
+            </div>
+            <!-- 间隔 -->
+            <div class="w-100" style="height:5px"></div>
+            <div class="row">
+              <div class="col offset-3">
                 &nbsp&nbsp&nbsp
                 <span class="article-author">作者：<?=$article['username']?></span>
+                &nbsp&nbsp&nbsp
+                <span class="article-create_data">创建时间：<?=$article['create_data']?></span>
               </div>
             </div>
             <!-- 间隔 -->

@@ -53,7 +53,7 @@ include("isLoginCheck.php");
                   <div class="form-group row">
                       <label for="inputContent" class="col-2 col-form-label-sm">内容</label>
                       <div class="col">
-                        <textarea name="content" class="col-6 form-control-sm" id="inputContent" placeholder="请输入内容"></textarea>
+                        <textarea name="content" rows="30" class="col-6 form-control-sm" id="inputContent" placeholder="请输入内容"></textarea>
                       </div>
                   </div>
                   <div class="form-group row">
