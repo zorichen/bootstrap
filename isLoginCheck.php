@@ -9,7 +9,7 @@ session_start();
 if (isset($_SESSION['username'])) {
     
 } else {
-    echo "<script> alert('无权访问'); </script>";
+    echo "<script> window.location.href='login.php'; </script>";
     die ;
 }
 

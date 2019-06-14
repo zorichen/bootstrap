@@ -45,15 +45,15 @@ include("isLoginCheck.php");
               <div class="col offset-md-1">
                 <form action="newCheck.php" method="POST">
                   <div class="form-group row">
-                      <label for="inputTitle" class="col-2 col-form-label">标题</label>
+                      <label for="inputTitle" class="col-2 col-form-label-sm">标题</label>
                       <div class="col">
-                          <input type="text" name="title" class="col-6 form-control" id="inputTitle" placeholder="请输入标题">
+                          <input type="text" name="title" class="col-6 form-control-sm" id="inputTitle" placeholder="请输入标题">
                       </div>
                   </div>
                   <div class="form-group row">
-                      <label for="inputContent" class="col-2 col-form-label">内容</label>
+                      <label for="inputContent" class="col-2 col-form-label-sm">内容</label>
                       <div class="col">
-                        <textarea name="content" class="col-6 form-control" id="inputContent" placeholder="请输入内容"></textarea>
+                        <textarea name="content" class="col-6 form-control-sm" id="inputContent" placeholder="请输入内容"></textarea>
                       </div>
                   </div>
                   <div class="form-group row">

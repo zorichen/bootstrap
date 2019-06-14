@@ -40,6 +40,8 @@
                 <?php include("loginCheckFunction.php"); ?>
               </div>
             </div>
+            <!-- 间隔 -->
+            <div class="w-100" style="height:20px"></div>
           </div>
         </div>
       </div>

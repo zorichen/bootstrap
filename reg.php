@@ -39,27 +39,28 @@
               <div class="col offset-md-1">
                 <form action="regCheck.php" method="POST">
                   <div class="form-group row">
-                      <label for="inputUsername" class="col-2 col-form-label">账号</label>
-                      <div class="col">
-                          <input type="text" name="username" class="col-6 form-control" id="inputUsername" placeholder="请输入手机号">
-                      </div>
+                    <label for="inputUsername" class="col-2 col-form-label-sm">账号</label>
+                    <div class="col">
+                      <input type="text" name="username" class="col-6 form-control-sm" id="inputUsername" placeholder="请输入手机号">
+                    </div>
                   </div>
                   <div class="form-group row">
-                      <label for="inputPassword" class="col-2 col-form-label">密码</label>
-                      <div class="col">
-                          <input type="password" name="password" class="col-6 form-control" id="inputPassword" placeholder="请输入6~16位密码">
-                      </div>
+                    <label for="inputPassword" class="col-2 col-form-label-sm">密码</label>
+                    <div class="col">
+                      <input type="password" name="password" class="col-6 form-control-sm" id="inputPassword" placeholder="请输入6~16位密码">
+                    </div>
                   </div>
                   <div class="form-group row">
-                      <label for="inputPassword" class="col-2 col-form-label">重复密码</label>
-                      <div class="col">
-                          <input type="password" name="password2" class="col-6 form-control" id="inputPassword" placeholder="请重复输入6~16位密码">
-                      </div>
+                    <label for="inputPassword" class="col-2 col-form-label-sm">重复密码</label>
+                    <div class="col">
+                      <input type="password" name="password2" class="col-6 form-control-sm" id="inputPassword" placeholder="请重复输入6~16位密码">
+                    </div>
                   </div>
                   <div class="form-group row">
-                      <div class="col">
-                          <button type="submit" class="btn btn-primary">注册</button>
-                      </div>
+                    <div class="col-2"></div>
+                    <div class="col">
+                      <button type="submit" class="btn-sm btn-primary">注册</button>
+                    </div>
                   </div>
                 </form>
               </div>
